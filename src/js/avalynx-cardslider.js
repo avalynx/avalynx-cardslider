@@ -107,8 +107,10 @@ class AvalynxCardSlider {
     get visibleItemsCount() {
         if (!this.items || this.items.length === 0) return 1;
         const itemWidth = this.items[0].getBoundingClientRect().width;
+        if (itemWidth <= 0) return 1;
         const trackContainerWidth = this.track.parentElement.getBoundingClientRect().width;
-        return Math.max(1, Math.floor((trackContainerWidth + 1) / itemWidth));
+        // Use a 2px epsilon to handle potential Bootstrap subpixel rounding issues
+        return Math.max(1, Math.floor((trackContainerWidth + 2) / itemWidth));
     }
 
     get maxIndex() {
@@ -121,8 +123,20 @@ class AvalynxCardSlider {
     }
 
     slide(direction) {
-        const step = this.options.scrollMode === 'page' ? this.visibleItemsCount : 1;
-        this.currentIndex += (direction * step);
+        if (this.options.scrollMode === 'page') {
+            const step = this.visibleItemsCount;
+            if (direction === 1) {
+                // Next: Jump to the next multiple of step, or maxIndex
+                let nextIndex = Math.ceil((this.currentIndex + 1) / step) * step;
+                this.currentIndex = Math.min(this.maxIndex, nextIndex);
+            } else {
+                // Prev: Jump to the previous multiple of step, or 0
+                let prevIndex = Math.floor((this.currentIndex - 1) / step) * step;
+                this.currentIndex = Math.max(0, prevIndex);
+            }
+        } else {
+            this.currentIndex += direction;
+        }
 
         this.ensureBounds();
         this.applyTransform();
@@ -145,9 +159,12 @@ class AvalynxCardSlider {
 
         if (this.totalItems <= visibleCount) return;
 
-        let dotCount = this.options.scrollMode === 'page'
-            ? Math.ceil(this.totalItems / visibleCount)
-            : this.maxIndex + 1;
+        let dotCount;
+        if (this.options.scrollMode === 'page') {
+            dotCount = Math.ceil(this.totalItems / visibleCount);
+        } else {
+            dotCount = this.maxIndex + 1;
+        }
 
         for (let i = 0; i < dotCount; i++) {
             const btn = document.createElement('button');
@@ -156,7 +173,11 @@ class AvalynxCardSlider {
             btn.setAttribute('aria-label', `Gehe zu Slide ${i + 1}`);
 
             btn.addEventListener('click', () => {
-                this.currentIndex = this.options.scrollMode === 'page' ? (i * visibleCount) : i;
+                if (this.options.scrollMode === 'page') {
+                    this.currentIndex = Math.min(i * visibleCount, this.maxIndex);
+                } else {
+                    this.currentIndex = i;
+                }
                 this.ensureBounds();
                 this.applyTransform();
             });
@@ -175,7 +196,8 @@ class AvalynxCardSlider {
 
         let activeIndex = 0;
         if (this.options.scrollMode === 'page') {
-            activeIndex = Math.ceil(this.currentIndex / this.visibleItemsCount);
+            const visibleCount = this.visibleItemsCount;
+            activeIndex = Math.floor(this.currentIndex / visibleCount);
             if (this.currentIndex === this.maxIndex) {
                 activeIndex = dots.length - 1;
             }
@@ -184,7 +206,7 @@ class AvalynxCardSlider {
         }
 
         dots.forEach((dot, index) => {
-            if(index === activeIndex) {
+            if (index === activeIndex) {
                 dot.classList.add('active');
             } else {
                 dot.classList.remove('active');

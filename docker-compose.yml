@@ -4,8 +4,8 @@ services:
         working_dir: /app
         user: application
         ports:
-            - "${PORT_HTTP:-80}:80"
-            - "${PORT_HTTPS:-443}:443"
+            - "80:80"
+            - "443:443"
         volumes:
             - ./:/app
         tmpfs:
