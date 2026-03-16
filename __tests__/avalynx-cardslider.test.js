@@ -55,6 +55,18 @@ describe('AvalynxCardSlider', () => {
         expect(prevBtn.disabled).toBe(true);
     });
 
+    test('should slide back when prev button is clicked', () => {
+        const slider = new AvalynxCardSlider('track', {
+            prevBtnId: 'prevBtn',
+            nextBtnId: 'nextBtn'
+        });
+
+        nextBtn.click();
+        prevBtn.click();
+
+        expect(slider.currentIndex).toBe(0);
+    });
+
     test('should generate dots if dotsId is provided', () => {
         new AvalynxCardSlider('track', { dotsId: 'dots' });
         const dots = dotsContainer.querySelectorAll('.avalynx-cardslider-dot');
@@ -346,7 +358,13 @@ describe('AvalynxCardSlider', () => {
 
     test('should safely return when track element does not exist', () => {
         const slider = new AvalynxCardSlider('missing-track-id');
-        expect(slider.track).toBeUndefined();
+        expect(slider.track).toBeNull();
+    });
+
+    test('should fallback to 1 visible item when items are not initialized', () => {
+        const slider = new AvalynxCardSlider('track');
+        slider.items = null;
+        expect(slider.visibleItemsCount).toBe(1);
     });
 
     test('should safely return when track has no items', () => {
