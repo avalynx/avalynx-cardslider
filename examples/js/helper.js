@@ -26,4 +26,22 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		});
 	}
+
+	const copyButtons = document.querySelectorAll('.copy-button[data-copy-target]');
+	copyButtons.forEach((button) => {
+		button.addEventListener('click', () => {
+			const targetId = button.getAttribute('data-copy-target');
+			const codeElement = targetId ? document.getElementById(targetId) : null;
+			if (codeElement === null) {
+				return;
+			}
+
+			const code = codeElement.innerText;
+			navigator.clipboard.writeText(code).then(() => {
+				button.textContent = 'Copied!';
+			}).catch(err => {
+				console.error('Error copying text: ', err);
+			});
+		});
+	});
 });
