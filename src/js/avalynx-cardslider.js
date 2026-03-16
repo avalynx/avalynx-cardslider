@@ -49,6 +49,8 @@ class AvalynxCardSlider {
         this.items = Array.from(this.track.children);
         if (this.items.length === 0) return;
 
+        this.originalItems = [...this.items];
+
         this.prevBtn = this.options.prevBtnId ? document.getElementById(this.options.prevBtnId) : null;
         this.nextBtn = this.options.nextBtnId ? document.getElementById(this.options.nextBtnId) : null;
         this.dotsContainer = this.options.dotsId ? document.getElementById(this.options.dotsId) : null;
@@ -57,6 +59,7 @@ class AvalynxCardSlider {
         this.currentIndex = 0;
 
         this.setupDOM();
+        this.syncPagePlaceholders();
         this.bindEvents();
 
         this.generateDots();
@@ -97,6 +100,7 @@ class AvalynxCardSlider {
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
+                this.syncPagePlaceholders();
                 this.ensureBounds();
                 this.generateDots();
                 this.applyTransform();
@@ -104,13 +108,50 @@ class AvalynxCardSlider {
         });
     }
 
+    syncPagePlaceholders() {
+        const placeholderClass = 'avalynx-cardslider-item-placeholder';
+
+        this.track.querySelectorAll(`.${placeholderClass}`).forEach(node => node.remove());
+        this.items = Array.from(this.track.children);
+
+        if (this.options.scrollMode !== 'page') {
+            this.totalItems = this.items.length;
+            return;
+        }
+
+        const realItemCount = this.items.length;
+        const visibleCount = this.visibleItemsCount;
+        const placeholdersNeeded = (visibleCount - (realItemCount % visibleCount)) % visibleCount;
+
+        for (let i = 0; i < placeholdersNeeded; i++) {
+            const baseItem = this.originalItems[0];
+            const placeholder = document.createElement(baseItem.tagName);
+            placeholder.className = baseItem.className;
+            placeholder.classList.add(placeholderClass);
+            placeholder.setAttribute('aria-hidden', 'true');
+            placeholder.setAttribute('role', 'presentation');
+            this.track.appendChild(placeholder);
+        }
+
+        this.items = Array.from(this.track.children);
+        this.totalItems = this.items.length;
+    }
+
     get visibleItemsCount() {
         if (!this.items || this.items.length === 0) return 1;
         const itemWidth = this.items[0].getBoundingClientRect().width;
         if (itemWidth <= 0) return 1;
         const trackContainerWidth = this.track.parentElement.getBoundingClientRect().width;
-        // Use a 2px epsilon to handle potential Bootstrap subpixel rounding issues
-        return Math.max(1, Math.floor((trackContainerWidth + 2) / itemWidth));
+
+        const ratio = trackContainerWidth / itemWidth;
+        const nearestInteger = Math.round(ratio);
+
+        // Handle Bootstrap subpixel rounding around breakpoints (e.g. 3.99 should become 4)
+        if (Math.abs(ratio - nearestInteger) < 0.2) {
+            return Math.max(1, nearestInteger);
+        }
+
+        return Math.max(1, Math.floor(ratio));
     }
 
     get maxIndex() {

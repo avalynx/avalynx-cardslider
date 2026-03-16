@@ -12,14 +12,18 @@ AvalynxCardSlider ist ein leichtgewichtiger, nativer JavaScript-Slider speziell 
 
 - **Natives Bootstrap Grid**: Volle Kompatibilität mit `col-12`, `col-md-6`, `col-lg-4` usw. Responsive Breakpoints funktionieren Out-of-the-Box.
 - **Scroll Modes**: Wähle zwischen `single` (eine Karte pro Klick) oder `page` (gesamte Bootstrap-Breite überspringen).
+- **Page-Modus mit Platzhaltern**: Wenn die letzte Seite nicht vollständig ist, werden im `page`-Modus automatisch leere Platzhalter ergänzt (z. B. `5 6 7 _`), damit das Raster sauber bleibt.
 - **Steuerung**: Unterstützt Next/Prev Buttons sowie automatisch generierte Paginierungspunkte (Dots).
 - **Performance**: Vanilla ES6, keine Abhängigkeiten, minimales CSS. Responsive durch Window-Resize Listener mit Debouncing.
 
 ## Beispiele
 
 - Übersicht: https://avalynx-cardslider.jbs-newmedia.de/examples/index.html
-- Button Steuerung (Single): https://avalynx-cardslider.jbs-newmedia.de/examples/buttons-single.html
-- Dots Steuerung (Page): https://avalynx-cardslider.jbs-newmedia.de/examples/dots-page.html
+- Simple cardslider (Single): https://avalynx-cardslider.jbs-newmedia.de/examples/simple-cardslider.html
+- Page cardslider (Page): https://avalynx-cardslider.jbs-newmedia.de/examples/page-cardslider.html
+- Alignment examples (Button/Bullet): https://avalynx-cardslider.jbs-newmedia.de/examples/alignment-examples.html
+- Alignment examples (Button/Bullet, Page): https://avalynx-cardslider.jbs-newmedia.de/examples/alignment-page-examples.html
+- Complex card example: https://avalynx-cardslider.jbs-newmedia.de/examples/complex-card.html
 
 ## Einbindung (direkt im HTML)
 
