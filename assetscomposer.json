@@ -1,0 +1,12 @@
+{
+  "name": "avalynx/avalynx-cardslider",
+  "files": [
+    "dist/css/avalynx-cardslider.css",
+    "dist/js/avalynx-cardslider.esm.js",
+    "dist/js/avalynx-cardslider.js"
+  ],
+  "files-dev": [
+    "src/css/avalynx-cardslider.css",
+    "src/js/avalynx-cardslider.js"
+  ]
+}

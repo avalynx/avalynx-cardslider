@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de" data-bs-theme="auto">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Simple cardslider | AvalynxCardSlider Example</title>
+
+	<!-- Bootstrap 5.3 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Highlight.js 11.9 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9/build/styles/default.min.css">
+	<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9/build/highlight.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9/build/languages/javascript.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9/build/styles/stackoverflow-light.min.css" id="hljsTheme">
+	<script>hljs.highlightAll();</script>
+
+    <!-- AvalynxCardSlider -->
+    <link href="../src/css/avalynx-cardslider.css" rel="stylesheet">
+    <script src="../src/js/avalynx-cardslider.js"></script>
+
+	<!-- Example helper -->
+	<link href="./css/helper.css" rel="stylesheet">
+	<script src="./js/helper.js"></script>
+</head>
+<body>
+
+<div class="container py-5">
+
+	<a class="btn btn-secondary float-end m-3" href=".">Back</a> <button id="modeToggle" class="btn btn-primary float-end m-3">Toggle to Dark Mode</button>
+
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+
+	<div class="avalynx-cardslider-wrapper">
+		<div class="row" id="myCardTrack">
+			<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+				<div class="card p-3">Content 1</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+				<div class="card p-3">Content 2</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+				<div class="card p-3">Content 3</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+				<div class="card p-3">Content 4</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+				<div class="card p-3">Content 5</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mt-3 text-center">
+		<button id="btnPrev" class="btn btn-secondary">Prev</button>
+		<button id="btnNext" class="btn btn-primary">Next</button>
+	</div>
+	<div id="sliderDots" class="mt-3 text-center"></div>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			new AvalynxCardSlider('myCardTrack', {
+				scrollMode: 'single',
+				prevBtnId: 'btnPrev',
+				nextBtnId: 'btnNext',
+				dotsId: 'sliderDots'
+			});
+		});
+	</script>
+
+	<br/>
+	<h3>Source of example<a class="p-1 float-end btn btn-secondary btn-small" id="copyButton">Copy to clipboard</a></h3>
+	<pre><code class="language-javascript" id="codeBlock">
+new AvalynxCardSlider('myCardTrack', {
+	scrollMode: 'single',
+	prevBtnId: 'btnPrev',
+	nextBtnId: 'btnNext',
+	dotsId: 'sliderDots'
+});
+	</code></pre>
+
+	<a href="https://github.com/avalynx/avalynx-cardslider" target="_blank" class="btn btn-primary">AvalynxCardSlider on GitHub</a> <a href="https://github.com/avalynx/" target="_blank" class="btn btn-primary">Avalynx on GitHub</a>
+
+</div>
