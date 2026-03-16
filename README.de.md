@@ -18,12 +18,12 @@ AvalynxCardSlider ist ein leichtgewichtiger, nativer JavaScript-Slider speziell 
 
 ## Beispiele
 
-- Übersicht: https://avalynx-cardslider.jbs-newmedia.de/examples/index.html
-- Simple cardslider (Single): https://avalynx-cardslider.jbs-newmedia.de/examples/simple-cardslider.html
-- Page cardslider (Page): https://avalynx-cardslider.jbs-newmedia.de/examples/page-cardslider.html
-- Alignment examples (Button/Bullet): https://avalynx-cardslider.jbs-newmedia.de/examples/alignment-examples.html
-- Alignment examples (Button/Bullet, Page): https://avalynx-cardslider.jbs-newmedia.de/examples/alignment-page-examples.html
-- Complex card example: https://avalynx-cardslider.jbs-newmedia.de/examples/complex-card.html
+- [Übersicht](https://avalynx-cardslider.jbs-newmedia.de/examples/index.html)
+- [Simple cardslider (Single)](https://avalynx-cardslider.jbs-newmedia.de/examples/simple-cardslider.html)
+- [Page cardslider (Page)](https://avalynx-cardslider.jbs-newmedia.de/examples/page-cardslider.html)
+- [Alignment examples (Button/Bullet)](https://avalynx-cardslider.jbs-newmedia.de/examples/alignment-examples.html)
+- [Alignment examples (Button/Bullet, Page)](https://avalynx-cardslider.jbs-newmedia.de/examples/alignment-page-examples.html)
+- [Complex card example](https://avalynx-cardslider.jbs-newmedia.de/examples/complex-card.html)
 
 ## Einbindung (direkt im HTML)
 
@@ -45,7 +45,7 @@ Stellen Sie sicher, dass Bootstrap 5.3 (oder neuer) eingebunden ist.
 <script src="https://cdn.jsdelivr.net/npm/avalynx-cardslider@1.0.0/dist/js/avalynx-cardslider.js"></script>
 ```
 
-## Installation via NPM (https://www.npmjs.com/package/avalynx-cardslider)
+## Installation via NPM ([Link](https://www.npmjs.com/package/avalynx-cardslider))
 
 ```bash
 npm install avalynx-cardslider
@@ -73,14 +73,14 @@ import 'avalynx-cardslider/dist/css/avalynx-cardslider.css';
 
 ## Installation via Symfony AssetComposer
 
-Weitere Informationen: https://github.com/jbsnewmedia/asset-composer-bundle
+Weitere Informationen zum Symfony AssetComposer Bundle finden Sie [hier](https://github.com/jbsnewmedia/asset-composer-bundle).
 
 ```twig
 {% do addAssetComposer('avalynx/avalynx-cardslider/dist/css/avalynx-cardslider.css') %}
 {% do addAssetComposer('avalynx/avalynx-cardslider/dist/js/avalynx-cardslider.js') %}
 ```
 
-## Installation via Composer (PHP) (https://packagist.org/packages/avalynx/avalynx-cardslider)
+## Installation via Composer (PHP) ([Link](https://packagist.org/packages/avalynx/avalynx-cardslider))
 
 ```bash
 composer require avalynx/avalynx-cardslider
