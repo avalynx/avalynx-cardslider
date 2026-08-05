@@ -1,10 +1,12 @@
 # AvalynxCardSlider
 
-[![npm Version](https://img.shields.io/npm/v/avalynx-cardslider)](https://www.npmjs.com/package/avalynx-cardslider)
-[![npm Downloads](https://img.shields.io/npm/dt/avalynx-cardslider)](https://www.npmjs.com/package/avalynx-cardslider)
-[![jsDelivr](https://img.shields.io/jsdelivr/npm/hm/avalynx-cardslider)](https://www.jsdelivr.com/package/npm/avalynx-cardslider)
-[![Lizenz](https://img.shields.io/npm/l/avalynx-cardslider)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/avalynx/avalynx-cardslider?style=flat&logo=github)](https://github.com/avalynx/avalynx-cardslider)
+[![npm version](https://jbs-newmedia.de/badge/npm/avalynx-cardslider/version.svg)](https://www.npmjs.com/package/avalynx-cardslider)
+[![npm downloads](https://jbs-newmedia.de/badge/npm/avalynx-cardslider/download.svg)](https://www.npmjs.com/package/avalynx-cardslider)
+[![jsDelivr](https://jbs-newmedia.de/badge/jsdelivr/avalynx-cardslider/hits.svg)](https://www.jsdelivr.com/package/npm/avalynx-cardslider)
+[![License](https://jbs-newmedia.de/badge/npm/avalynx-cardslider/license.svg)](LICENSE)
+[![Tests](https://jbs-newmedia.de/badge/github/avalynx/avalynx-cardslider/tests.svg)](https://github.com/avalynx/avalynx-cardslider/actions/workflows/tests.yml)
+[![codecov](https://jbs-newmedia.de/badge/codecov/avalynx/avalynx-cardslider/coverage.svg)](https://codecov.io/gh/avalynx/avalynx-cardslider)
+[![GitHub stars](https://jbs-newmedia.de/badge/github/avalynx/avalynx-cardslider/stars.svg)](https://github.com/avalynx/avalynx-cardslider)
 
 AvalynxCardSlider ist ein leichtgewichtiger, nativer JavaScript-Slider speziell für das Bootstrap Grid-System. Er nutzt Bootstrap Spalten (ab Version 5.3) und gleitet nahtlos entweder karte für Karte oder seitenweise. Komplett ohne Framework-Abhängigkeiten wie jQuery oder Swiper.
 
@@ -18,45 +20,63 @@ AvalynxCardSlider ist ein leichtgewichtiger, nativer JavaScript-Slider speziell 
 
 ## Beispiele
 
-- [Übersicht](https://avalynx-cardslider.jbs-newmedia.de/examples/index.html)
-- [Simple cardslider (Single)](https://avalynx-cardslider.jbs-newmedia.de/examples/simple-cardslider.html)
-- [Page cardslider (Page)](https://avalynx-cardslider.jbs-newmedia.de/examples/page-cardslider.html)
-- [Alignment examples (Button/Bullet)](https://avalynx-cardslider.jbs-newmedia.de/examples/alignment-examples.html)
-- [Alignment examples (Button/Bullet, Page)](https://avalynx-cardslider.jbs-newmedia.de/examples/alignment-page-examples.html)
-- [Complex card example](https://avalynx-cardslider.jbs-newmedia.de/examples/complex-card.html)
+Hier ist ein einfaches Beispiel für die Verwendung von AvalynxCardSlider in Ihrem Projekt:
 
-## Einbindung (direkt im HTML)
+* [Übersicht](https://avalynx-cardslider.jbs-newmedia.de/examples/index.html)
+* [Simple cardslider (Single)](https://avalynx-cardslider.jbs-newmedia.de/examples/simple-cardslider.html)
+* [Page cardslider (Page)](https://avalynx-cardslider.jbs-newmedia.de/examples/page-cardslider.html)
+* [Alignment examples (Button/Bullet)](https://avalynx-cardslider.jbs-newmedia.de/examples/alignment-examples.html)
+* [Alignment examples (Button/Bullet, Page)](https://avalynx-cardslider.jbs-newmedia.de/examples/alignment-page-examples.html)
+* [Complex card example](https://avalynx-cardslider.jbs-newmedia.de/examples/complex-card.html)
 
-Stellen Sie sicher, dass Bootstrap 5.3 (oder neuer) eingebunden ist.
+## Installation
+
+Um AvalynxCardSlider in Ihrem Projekt zu verwenden, können Sie es direkt in Ihre HTML-Datei einbinden. Stellen Sie sicher, dass Bootstrap 5.3 oder höher in Ihrem Projekt enthalten ist, damit AvalynxCardSlider korrekt funktioniert.
+
+Zuerst Bootstrap einbinden:
 
 ```html
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- AvalynxCardSlider -->
-<link href="path/to/avalynx-cardslider.css" rel="stylesheet">
-<script src="path/to/avalynx-cardslider.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3/dist/js/bootstrap.bundle.min.js"></script>
 ```
 
-## Einbindung via jsDelivr (CDN)
+Dann AvalynxCardSlider einbinden:
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/avalynx-cardslider@1.0.0/dist/css/avalynx-cardslider.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/avalynx-cardslider@1.0.0/dist/js/avalynx-cardslider.js"></script>
+<link href="pfad/zu/avalynx-cardslider.css" rel="stylesheet">
+<script src="pfad/zu/avalynx-cardslider.js"></script>
 ```
 
+Ersetzen Sie `pfad/zu/avalynx-cardslider.*` durch den tatsächlichen Pfad zu den Dateien in Ihrem Projekt.
+
+## Installation via jsDelivr ([Link](https://cdn.jsdelivr.net/npm/avalynx-cardslider/))
+
+AvalynxCardSlider ist auch über [jsDelivr](https://www.jsdelivr.com/) verfügbar. Sie können es wie folgt in Ihr Projekt einbinden:
+
+```html
+<link href="https://cdn.jsdelivr.net/npm/avalynx-cardslider@1.0.1/dist/css/avalynx-cardslider.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/avalynx-cardslider@1.0.1/dist/js/avalynx-cardslider.js"></script>
+```
+
+Stellen Sie sicher, dass Sie auch Bootstrap JS/CSS in Ihr Projekt einbinden, um eine korrekte Anzeige von AvalynxCardSlider zu gewährleisten.
+
 ## Installation via NPM ([Link](https://www.npmjs.com/package/avalynx-cardslider))
+
+AvalynxCardSlider ist auch als NPM-Paket verfügbar. Sie können es mit dem folgenden Befehl zu Ihrem Projekt hinzufügen:
 
 ```bash
 npm install avalynx-cardslider
 ```
 
-Danach in JavaScript importieren:
+Nach der Installation können Sie AvalynxCardSlider wie folgt in Ihre JavaScript-Datei importieren:
 
 ```javascript
 import { AvalynxCardSlider } from 'avalynx-cardslider';
 import 'avalynx-cardslider/dist/css/avalynx-cardslider.css';
 ```
+
+Stellen Sie sicher, dass Sie auch Bootstrap JS/CSS in Ihr Projekt einbinden, um eine korrekte Anzeige von AvalynxCardSlider zu gewährleisten.
 
 ## Installation via Symfony AssetMapper
 
@@ -64,12 +84,14 @@ import 'avalynx-cardslider/dist/css/avalynx-cardslider.css';
 php bin/console importmap:require avalynx-cardslider
 ```
 
-Danach in JavaScript importieren:
+Nach der Installation können Sie AvalynxCardSlider wie folgt in Ihre JavaScript-Datei importieren:
 
 ```javascript
 import { AvalynxCardSlider } from 'avalynx-cardslider';
 import 'avalynx-cardslider/dist/css/avalynx-cardslider.css';
 ```
+
+Stellen Sie sicher, dass Sie auch Bootstrap JS/CSS in Ihr Projekt einbinden, um eine korrekte Anzeige von AvalynxCardSlider zu gewährleisten.
 
 ## Installation via Symfony AssetComposer
 
@@ -80,22 +102,28 @@ Weitere Informationen zum Symfony AssetComposer Bundle finden Sie [hier](https:/
 {% do addAssetComposer('avalynx/avalynx-cardslider/dist/js/avalynx-cardslider.js') %}
 ```
 
-## Installation via Composer (PHP) ([Link](https://packagist.org/packages/avalynx/avalynx-cardslider))
+Stellen Sie sicher, dass Sie auch Bootstrap JS/CSS in Ihr Projekt einbinden, um eine korrekte Anzeige von AvalynxCardSlider zu gewährleisten.
+
+## Installation via Composer ([Link](https://packagist.org/packages/avalynx/avalynx-cardslider))
+
+AvalynxCardSlider ist auch als Composer-Paket verfügbar. Sie können es mit dem folgenden Befehl zu Ihrem Projekt hinzufügen:
 
 ```bash
 composer require avalynx/avalynx-cardslider
 ```
 
-Einbindung in HTML:
+Nach der Installation können Sie AvalynxCardSlider wie folgt in Ihre HTML-Datei einbinden:
 
 ```html
 <link href="vendor/avalynx/avalynx-cardslider/dist/css/avalynx-cardslider.css" rel="stylesheet">
 <script src="vendor/avalynx/avalynx-cardslider/dist/js/avalynx-cardslider.js"></script>
 ```
 
+Stellen Sie sicher, dass Sie auch Bootstrap JS/CSS in Ihr Projekt einbinden, um eine korrekte Anzeige von AvalynxCardSlider zu gewährleisten.
+
 ## Verwendung
 
-HTML Struktur (Standard Bootstrap Grid mit der ID auf der `.row`):
+HTML-Struktur (Standard Bootstrap Grid mit der ID auf der `.row`):
 
 ```html
 <div class="container">
@@ -137,21 +165,31 @@ new AvalynxCardSlider('myCardTrack', {
 
 ## Optionen
 
-- `trackId` (string, required): ID des `.row` Containers, in dem sich die Cols (Karten) befinden. *Gleiche Logik wie der Erste Parameter*.
-- `options` (object):
-    - `scrollMode` (string): Bestimmt das Scrollverhalten. `single` scrollt immer eine Spalte weiter, `page` scrollt so viele Spalten weiter, wie gerade im Viewport sichtbar sind (Standard: `single`).
-    - `prevBtnId` (string): ID für den "Zurück"-Button (Standard: `null`).
-    - `nextBtnId` (string): ID für den "Vor"-Button (Standard: `null`).
-    - `dotsId` (string): ID des Containers, in dem die dynamischen Paginierungs-Punkte erzeugt werden sollen (Standard: `null`).
+AvalynxCardSlider ermöglicht die folgenden Optionen zur Anpassung:
 
-## Mitwirken
+- `trackId`: (string) ID des `.row` Containers, in dem sich die Spalten (Karten) befinden. Gleiche Logik wie der erste Parameter.
+- `options`: Ein Objekt, das die folgenden Schlüssel enthält:
+    - `scrollMode`: (string) Bestimmt das Scrollverhalten. `single` scrollt immer eine Spalte weiter, `page` scrollt so viele Spalten weiter, wie gerade im Viewport sichtbar sind (Standard: `single`).
+    - `prevBtnId`: (string) ID für den "Zurück"-Button (Standard: `null`).
+    - `nextBtnId`: (string) ID für den "Vor"-Button (Standard: `null`).
+    - `dotsId`: (string) ID des Containers, in dem die dynamischen Paginierungs-Punkte erzeugt werden sollen (Standard: `null`).
 
-Beiträge sind willkommen! Bitte erstellen Sie einen Fork und senden Sie einen Pull Request. Achten Sie dabei auf konsistenten Code‑Stil und ausreichende Dokumentation.
+## Beitragen
+
+Beiträge sind willkommen! Wenn Sie etwas beitragen möchten, forken Sie bitte das Repository und senden Sie einen Pull-Request mit Ihren Änderungen oder Verbesserungen. Wir suchen Beiträge in den folgenden Bereichen:
+
+- Fehlerbehebungen (Bug fixes)
+- Funktionserweiterungen
+- Dokumentationsverbesserungen
+
+Bevor Sie Ihren Pull-Request einreichen, stellen Sie bitte sicher, dass Ihre Änderungen gut dokumentiert sind und dem bestehenden Codestil des Projekts entsprechen.
 
 ## Lizenz
 
-AvalynxCardSlider steht unter der [MIT‑Lizenz](LICENSE).
+AvalynxCardSlider steht unter der [MIT-Lizenz](LICENSE).
 
 ## Kontakt
 
-Fragen, Feature‑Wünsche oder Probleme? Bitte ein Issue im [GitHub‑Repository](https://github.com/avalynx/avalynx-cardslider/issues) eröffnen oder einen Pull Request stellen.
+Wenn Sie Fragen, Funktionswünsche oder Probleme haben, eröffnen Sie bitte ein Issue in unserem [GitHub-Repository](https://github.com/avalynx/avalynx-cardslider/issues) oder reichen Sie einen Pull-Request ein.
+
+Vielen Dank, dass Sie AvalynxCardSlider für Ihr Projekt in Betracht ziehen!

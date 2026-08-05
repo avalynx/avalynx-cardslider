@@ -1,9 +1,9 @@
 /**
  * AvalynxCardSlider
  *
- * A simple grid card slider for web applications. Based on Bootstrap >=5.3 without any framework dependencies.
+ * AvalynxCardSlider is a simple grid card slider for web applications. Based on Bootstrap >=5.3 without any framework dependencies.
  *
- * @version 1.0.0
+ * @version 1.0.1
  * @license MIT
  * @author https://github.com/avalynx/avalynx-cardslider/graphs/contributors
  * @website https://github.com/avalynx/
@@ -74,12 +74,10 @@ class AvalynxCardSlider {
 
         let wrapper = this.track.parentElement;
         if (wrapper && !wrapper.classList.contains('avalynx-cardslider-wrapper')) {
-            // Only add the wrapper class if it's not a common layout container like 'container' or 'container-fluid'
             const isLayoutContainer = Array.from(wrapper.classList).some(cls => cls.startsWith('container'));
             if (!isLayoutContainer) {
                 wrapper.classList.add('avalynx-cardslider-wrapper');
             } else {
-                // If it is a container, wrap the track in a new div with the wrapper class
                 const newWrapper = document.createElement('div');
                 newWrapper.className = 'avalynx-cardslider-wrapper';
                 this.track.parentNode.insertBefore(newWrapper, this.track);
@@ -146,7 +144,6 @@ class AvalynxCardSlider {
         const ratio = trackContainerWidth / itemWidth;
         const nearestInteger = Math.round(ratio);
 
-        // Handle Bootstrap subpixel rounding around breakpoints (e.g. 3.99 should become 4)
         if (Math.abs(ratio - nearestInteger) < 0.2) {
             return Math.max(1, nearestInteger);
         }
@@ -167,11 +164,9 @@ class AvalynxCardSlider {
         if (this.options.scrollMode === 'page') {
             const step = this.visibleItemsCount;
             if (direction === 1) {
-                // Next: Jump to the next multiple of step, or maxIndex
                 let nextIndex = Math.ceil((this.currentIndex + 1) / step) * step;
                 this.currentIndex = Math.min(this.maxIndex, nextIndex);
             } else {
-                // Prev: Jump to the previous multiple of step, or 0
                 let prevIndex = Math.floor((this.currentIndex - 1) / step) * step;
                 this.currentIndex = Math.max(0, prevIndex);
             }
